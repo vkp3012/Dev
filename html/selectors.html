@@ -7,22 +7,29 @@
     <title>Selector CSS</title>
 
     <style>
-        /* Element Selector */
-        h1{
+        /* Body Formate */
+         h1{
             text-align: center;
-            background-color:lightblue;
+            background-color:rgb(9, 19, 110);
             color:white;
         }
+
+        /* This is called Grouping Selector */
+        h2, h3{
+            color:white;
+        }
+
+        /* Element Selector */
         div{
-            color:red;
-            font-size: 3s0px;
+            color:rgb(20, 236, 236);
+            font-size: 10px;
+        }
+
+        p{
+            color:rgb(25, 223, 75);
         }
 
         /* Class Selector */
-        p{
-            color:rgb(223, 25, 196);
-        }
-
         .textcolor{
             color:lightblue;
         }
@@ -41,18 +48,20 @@
 
         /* Universal Selector */
         *{
-            background-color: black;
+            background-color: rgb(180, 20, 185);
         }
 
         /* Grouping Selector */
         h4,a,h5{
             color:lightgreen;
         }
+
     </style>
 </head>
 <body>
+    <!-- Selector -->
     <h1>Selector CSS</h1>
-    <h3>CSS selectors are used to "find" (or select) the HTML elements you want to style.</h3>
+    <h2>CSS selectors are used to "find" (or select) the HTML elements you want to style.</h2>
     <h2>Type of Selector</h2>
     <h3>There are 5 types of selector</h3>
     <ol>
@@ -64,7 +73,7 @@
     </ol>
 
     <h1>Simple Selector</h1>
-    <h3>There are 5 types of selector</h3>
+    <h3>There are 5 types of Simple selector</h3>
     <ol>
         <li>Element Selector</li>
         <li>Class Selector</li>
@@ -75,7 +84,19 @@
 
     <!-- Element Selector -->
     <h1>Element Selector</h1>
-    <h3>The element selector selects HTML elements based on the element name.</h3>
+    <h2>The element selector selects HTML elements based on the element name.</h2>
+    <h2>Example</h2><br>
+    <h3>
+        div{<br>
+            color:rgb(20, 236, 236);<br>
+            font-size: 10px;<br>
+        }<br><br>
+    
+        p{<br>
+            color:rgb(25, 223, 75);<br>
+        }<br>
+    </h3>
+    
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
         Quasi debitis eaque nostrum. Vel ad doloremque dignissimos animi saepe porro deserunt. 
         Minima earum placeat sit hic qui, unde distinctio maiores quaerat!</p>
@@ -123,6 +144,12 @@
             <li>To select an element with a specific id, write a hash (#) character, followed by the id of the element.</li>
         </ol>
     </h2>
+    <h2>Example</h2><br>
+    <h3>
+        #unique{<br>
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;<br>
+        }<br><br>
+    </h3>
     <p class="textcolor largetext" id="unique">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Est repellat quis magni quam pariatur, voluptate molestias optio provident recusandae 
