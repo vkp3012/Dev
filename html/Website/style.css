@@ -1,0 +1,17 @@
+li{
+    list-style: none;
+}
+
+.WelcomeImage>img{
+    height: 800px;
+    width:125git 0px;
+}
+
+.footer{
+    background-color:black;
+    color:white;
+    height: 100px;
+}
+.footer>p{
+    font-size:20px;
+}

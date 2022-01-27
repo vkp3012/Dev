@@ -32,3 +32,9 @@ caption{
     color:green;
     background-color:rgb(25, 240, 229);
 }
+table{
+    border-collapse: collapse;
+}
+td,th{
+    border:2px solid red;
+}
