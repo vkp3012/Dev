@@ -7,11 +7,25 @@ li{
     width:125git 0px;
 }
 
+.column{
+    float: left;
+    width: 31%;
+    padding: 10px;
+    height: 350px;
+}
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 .footer{
     background-color:black;
     color:white;
     height: 100px;
+    padding: 10px;
 }
 .footer>p{
     font-size:20px;
+    text-align:center;
 }
