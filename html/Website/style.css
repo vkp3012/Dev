@@ -29,6 +29,13 @@ nav {
     width: 22rem;
 }
 
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
 /* Second Part */
 .WelcomeImage>img{
     height: 800px;
