@@ -2,6 +2,11 @@ li{
     list-style: none;
 }
 
+.navbar>nav{
+    display: flex;
+    justify-content: space-between;
+}
+
 .WelcomeImage>img{
     height: 800px;
     width:125git 0px;
@@ -12,6 +17,7 @@ li{
     width: 31%;
     padding: 10px;
     height: 350px;
+    display:center;
 }
 .container:after {
     content: "";
