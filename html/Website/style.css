@@ -1,30 +1,53 @@
+/* First Part */
+/* Remove the list style */
 li{
     list-style: none;
+    font-size: 1.5rem;
 }
 
-.navbar>nav{
+/* header width */
+header h1{
+    font-weight: 400;
+}
+
+header{
     display: flex;
     justify-content: space-between;
+    margin: 0 3rem;
 }
 
+ul{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: -3rem;
+    top: 1rem;
+}
+
+/* Create a Space in words */
+nav {
+    width: 22rem;
+}
+
+/* Second Part */
 .WelcomeImage>img{
     height: 800px;
     width:125git 0px;
 }
 
-.column{
-    float: left;
-    width: 31%;
-    padding: 10px;
-    height: 350px;
-    display:center;
+/* Third part */
+.container {
+    display: flex;
+    margin: 2rem;
 }
-.container:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
 
+.column{
+    margin-right: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Fourth part */
 .footer{
     background-color:black;
     color:white;
