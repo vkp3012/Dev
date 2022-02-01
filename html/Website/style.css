@@ -2,32 +2,34 @@
 /* Remove the list style */
 li{
     list-style: none;
-    font-size: 1.5rem;
-}
-
-/* header width */
-header h1{
-    font-weight: 400;
+    /* font-size: 1.5rem; */
+    margin:1rem;
 }
 
 header{
     display: flex;
     justify-content: space-between;
-    margin: 0 3rem;
+    /* margin: 0 3rem; */
+}
+
+/* header width */
+header h1{
+    /* font-weight: 400; */
+    margin-left: 2rem;
 }
 
 ul{
     display: flex;
     justify-content: space-between;
-    position: relative;
+    /* position: relative;
     left: -3rem;
-    top: 1rem;
+    top: 1rem; */
 }
 
 /* Create a Space in words */
-nav {
+/* nav {
     width: 22rem;
-}
+} */
 
 a:link {
     text-decoration: none;
@@ -38,14 +40,15 @@ a:hover {
 
 /* Second Part */
 .WelcomeImage>img{
-    height: 800px;
-    width:125git 0px;
+    height: 100vh;
+    width:95vw;
+    margin-left:2vw;
+    margin-right:2.5vw;
 }
 
 /* Third part */
 .container {
     display: flex;
-    margin: 2rem;
 }
 
 .column{
@@ -58,10 +61,10 @@ a:hover {
 .footer{
     background-color:black;
     color:white;
-    height: 100px;
-    padding: 10px;
+    /* height: 100px; */
+    padding: 1px;
 }
 .footer>p{
-    font-size:20px;
+    font-size:25px;
     text-align:center;
 }
