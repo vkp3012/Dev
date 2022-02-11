@@ -106,17 +106,17 @@
 // loop in js mode
 
 // print 0 to 9 number...
-var num = 10;
-for (var i = 1; i <=num; i++){
-    console.log("Number is",i);
-}
+// var num = 10;
+// for (var i = 1; i <=num; i++){
+//     console.log("Number is",i);
+// }
 
 //find even and odd number handlers
-// var num1 = 10;
-// for (var i = 1; i < num1; i++){
-//     if(i%2==0){
-//         console.log(`${i} num is even`);
-//     }else{
-//         console.log(`${i} num is odd`);
-//     }
-// }
+var num1 = 10;
+for (var i = 1; i < num1; i++){
+    if(i%2==0){
+        console.log(`${i} num is even`);
+    }else{
+        console.log(`${i} num is odd`);
+    }
+}
