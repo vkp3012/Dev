@@ -112,11 +112,27 @@
 // }
 
 //find even and odd number handlers
-var num1 = 10;
-for (var i = 1; i < num1; i++){
-    if(i%2==0){
-        console.log(`${i} num is even`);
-    }else{
-        console.log(`${i} num is odd`);
+// var num1 = 10;
+// for (var i = 1; i < num1; i++){
+//     if(i%2==0){
+//         console.log(`${i} num is even`);
+//     }else{
+//         console.log(`${i} num is odd`);
+//     }
+//}
+
+//Check prime number of
+let n = 23;
+let flag = true;
+for(let div=2;div<n;div++){
+    if(n%div==0){
+        flag=false;
+        break;
     }
 }
+if(flag==true){
+    console.log(n,"is prime.");
+}else{
+    console.log(n,"is not prime.");
+}
+
