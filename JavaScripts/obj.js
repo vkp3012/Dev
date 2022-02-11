@@ -29,4 +29,8 @@ let obj ={
 obj.age = 36;
 console.log(obj.age);
 
+//Set...................
+
+
+
 
