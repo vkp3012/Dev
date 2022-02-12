@@ -40,3 +40,47 @@ function calculater(str,a,b){
 let returnedFunc = calculater("add",2,3);
 console.log("returned function is\n" + returnedFunc)
 returnedFunc();
+
+//2). Function Expression
+//--- function are treated as first class citizens in JavaScript
+
+// let SayHi = function(){
+//     console.log("Hello");
+// }
+
+// name of variable is used to invoke(call the function) the function
+
+//variable_name()
+// console.log(""+SayHi);
+// SayHi();
+
+
+//----------------------------------------------------------------
+
+let SayHi = function abcd(){
+    console.log("Hello");
+}
+//abcd();
+// name of variable is used to invoke(call the function) the function
+
+//variable_name()
+console.log(""+SayHi);
+SayHi();
+
+//----------------------------------------------------------------
+
+//3). IIFE:- Imediately invoke function expression
+
+function add(a,b){
+    return a + b;
+}
+console.log(add(2,3));
+
+//or
+
+let additionIIFE = (function add(a,b){
+    console.log(a + b);
+})(20,30);
+
+// console.log(" "+additionIIFE);
+// console.log(additionIIFE(20,30));
