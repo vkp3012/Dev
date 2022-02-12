@@ -6,13 +6,21 @@
 // }
 //------------------------------------------
 
-//Function Call...................
+//Function Call or function invoke................
 // SayHi();
 //------------------------------------------
-function SayHi(params){
-    console.log("params received",params);
+
+// function SayHi(params){
+//     console.log("params received",params);
+// }
+
+// SayHi(100);
+// SayHi("Hello World!");
+// SayHi([1,2,3,4,5])
+
+function add(a,b){
+    return a+b;
 }
 
-SayHi(100);
-SayHi("Hello World!");
-SayHi([1,2,3,4,5])
+let ans = add(2,6);
+console.log(ans)
