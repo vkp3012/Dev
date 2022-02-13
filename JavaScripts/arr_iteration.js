@@ -147,7 +147,6 @@ console.log("Search an array for the item Apple....")
 const fruits1 = ["Appl", "Orange", "Apple", "Mango"];
 let position1 = fruits1.indexOf("Apple") + 1;
 console.log(position1);
-
 // Syntax
 // array.indexOf(item, start)
 
