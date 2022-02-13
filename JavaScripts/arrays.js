@@ -460,9 +460,13 @@ console.log("--------------------------------------");
 //2D Arrays..
 let arrays2d = [
     [1,2,3],
-    [4,5,6],
+    [4, ,6],
     [7,8,9]
 ]
 
+
+
 //console.log(arrays2d);
 console.table(arrays2d);
+console.log(arrays2d[1].length);
+console.log(arrays2d[1][1]);
