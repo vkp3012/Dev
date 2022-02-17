@@ -35,6 +35,31 @@ let cap={
 }
 
 //console.log(cap);
-console.log(cap.friends);
-console.log(cap.friends[0]);
-cap.SayHi();
+//console.log(cap.friends);
+//console.log(cap.friends[0]);
+//cap.SayHi();
+
+// str{
+//     length: // 
+//     toUpperCase: function() {
+        
+//         for()
+//     }
+// }
+
+let arr={
+    0:"a",
+    1:"b",
+    2: 1,
+    3: true
+}
+
+//console.log(arr);
+
+//for loop
+for(let key in cap){
+    //keys
+    console.log(key);
+    //value
+    console.log(cap[key]);
+}
