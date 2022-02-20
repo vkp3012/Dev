@@ -63,3 +63,4 @@ for(let key in cap){
     //value
     console.log(cap[key]);
 }
+
