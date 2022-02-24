@@ -90,14 +90,14 @@
 
 // // < --------------Question 7----------------->
 // // for this question google what Object.freeze does 
-const person = {
-  name: 'Lydia Hallie',
-  address: {
-    street: '100 Main St',
-  },
-};
+// const person = {
+//   name: 'Lydia Hallie',
+//   address: {
+//     street: '100 Main St',
+//   },
+// };
 
-Object.freeze(person);
+// Object.freeze(person);
 
 // // < --------------Question 8----------------->
 // // for this question google what Object.seal does 
