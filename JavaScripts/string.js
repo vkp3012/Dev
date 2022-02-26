@@ -140,7 +140,7 @@ Example:
 */
 
 const ourName = "freeCodeCamp";
-const ourStr = "Hello, our name is " + ourName + ", how are you?";
+// const ourStr = "Hello, our name is " + ourName + ", how are you?";
 
 // ourStr would have a value of the string Hello, our name is freeCodeCamp, how are you?.
 
@@ -257,9 +257,12 @@ const lastLetter = firstName[firstName.length - 1];
     Hint: Try looking at the example above if you get stuck.
 
     Use Bracket Notation to Find the Nth-to-Last Character in a String
-    You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.
+    You can use the same principle we just used to retrieve the last character in a string to 
+    retrieve the Nth-to-last character.
 */
-// For example, you can get the value of the third-to-last letter of the const firstName = "Augusta" string by using firstName[firstName.length - 3]
+/* For example, you can get the value of the third-to-last letter of the 
+const firstName = "Augusta" string by using firstName[firstName.length - 3]
+*/
 
 // Example:
 
