@@ -1,28 +1,22 @@
 /*..........................Comment Your JavaScript Code.....................*/
 
 /* 
-    Comments are lines of code that JavaScript will intentionally ignore. 
-    Comments are a great way to leave notes to yourself and to other people 
-    who will later need to figure out what that code does.
-
     There are two ways to write comments in JavaScript:
 
     1).Using // will tell JavaScript to ignore the remainder of the text on the current line. 
        This is an in-line comment:
 
             // This is an in-line comment.
+
     2).You can make a multi-line comment beginning with 
        /* and ending with */
        //This is a multi-line comment:
 
-        /* This is a
-            multi-line comment */
-/*
-    NOTE: As you write code, you should regularly add comments to clarify the function of
-     parts of your code. Good commenting can help communicate the intent of your code—both 
-     for others and for your future self.
+        /* 
+            This is a
+            multi-line comment
+        */
 
-*/
 
 /*.....................Declare JavaScript Variables........................*/
 
@@ -35,14 +29,7 @@
     on a number, but not on a string.
 
     Variables allow computers to store and manipulate data in a dynamic fashion. 
-    They do this by using a "label" to point to the data rather than using the data itself. 
-    Any of the eight data types may be stored in a variable.
-
-    Variables are similar to the x and y variables you use in mathematics, which means they're 
-    a simple name to represent the data we want to refer to. Computer variables differ from mathematical 
-    variables in that they can store different values at different times.
-
-    We tell JavaScript to create or declare a variable by putting the keyword var in front of it, like so:
+    They do this by using a "label" to point to the data rather than using the data itself.
 */
 
 var ourName;
@@ -51,11 +38,6 @@ var ourName;
     creates a variable called ourName. In JavaScript we end statements with semicolons. 
     Variable names can be made up of numbers, letters, and $ or _, but may not contain spaces or 
     start with a number.
-
-    Use the var keyword to create a variable called myName.
-
-    Hint
-    Look at the ourName example above if you get stuck.
 */
 
 
@@ -71,9 +53,6 @@ console.log("---------------------------------------");
 
     myVariable = 5;
     This assigns the Number value 5 to myVariable.
-
-I   f there are any calculations to the right of the = operator,
-     those are performed before the value is assigned to the variable on the left of the operator.
 */
 
 var myVar;
@@ -88,6 +67,7 @@ myVar = 5;
 //Assign the value 7 to variable a.
 
 //Variable Initialization
+var a;
 a = 7
 
 /*........................Assigning the Value of One Variable to Another.................*/
@@ -108,58 +88,98 @@ myNum = myVar;
 */
 
 console.log("---------------------------------------");
+
+/*....................Declare String Variables....................*/
+
+//Previously you used the following code to declare a variable:
+
+var myName;
+
+//But you can also declare a string variable like this:
+
+var myName = "your name";
+/*
+    "your name" is called a string literal. A string literal, or string, is a series of zero or more characters 
+    enclosed in single or double quotes.
+
+    Create two new string variables: myFirstName and myLastName and assign them the values of your first and 
+    last name, respectively.
+
+*/
 //------------------------------------------------------
 
+/*..................Understanding Case Sensitivity in Variables...................*/
+/*
+    In JavaScript all variables and function names are case sensitive. 
+    This means that capitalization matters.
+
+    MYVAR is not the same as MyVar nor myvar. 
+    It is possible to have multiple distinct variables with the same name but different casing. 
+    It is strongly recommended that for the sake of clarity, you do not use this language feature.
+
+    Best Practice
+
+    Write variable names in JavaScript in camelCase. 
+    In camelCase, multi-word variable names have the first word in lowercase and 
+    the first letter of each subsequent word is capitalized.
+
+Examples:
+*/
+var someVariable;
+var anotherVariableName;
+var thisVariableNameIsSoLong;
+
+/*.......................var Keywords...........................*/
+/*
+    One of the biggest problems with declaring variables with the var keyword is that 
+    you can easily overwrite variable declarations:
+Example:-
+*/
+var camper = "James";
+var camper = "David";
+console.log(camper);
+
+/*........................Let Keyword...........................*/
+/*
+    A keyword called let was introduced in ES6, a major update to JavaScript, 
+    to solve this potential issue with the var keyword.
+Example:- 
+*/
+
+let camper = "James";
+let camper = "David";
+/*
+    The error can be seen in your browser console.
+
+    So unlike var, when you use let, a variable with the same name can only be declared once.
+
+    Update the code so it only uses the let keyword.\
+Example:- 
+*/
+let camper = "James";
+camper = "David";
+
+/*..............Const Keyword..................*/
+
+/*
+    In ES6, you can also declare variables using the const keyword.
+
+    const has all the awesome features that let has, with the added bonus that variables declared using 
+    const are read-only. 
+    They are a constant value, which means that once a variable is assigned with const, it cannot be reassigned:
+*/
+
+const FAV_PET = "Cats";
+FAV_PET = "Dogs";
+
+//The console will display an error due to reassigning the value of FAV_PET.
+
+/*.............Recall......................*/
 //print in js
 //console.log(a)
 //-------------------------------------------
 
-//find type of varibale
-// console.log(typeof a)
-//-----------------------------------------------------
 
-
-//String...................
-// a ="Hello"
-// console.log(a)
-// console.log(typeof a)
-
-
-// var str = "a"
-// console.log(typeof str);
-
-// str = "How you doing ?"
-// console.log(str);
-
-// str = "How you doing ? I am fine how about you?"
-// console.log(str);
-//--------------------------------------------------------
-
-//boolean...................
-// a = true;
-// console.log(a)
-// console.log(typeof a)
-
-// var t = true;
-// var f = false;
-// console.log(t);
-// console.log(f);
-//------------------------------------------------------------
-
-// undefined......................................
-// a = null;
-// console.log(a)
-// console.log(typeof a)
-//---------------------------------------------------------------
-
-//Number.........................................
-// var num = 10;
-// console.log(num);
-
-// //double or float
-// var float = 2.4;
-// console.log(float)
-//--------------------------------------------------------
 
 //show next line use ---\n
 // str = "How you doing ?\nI am fine how about you?"
