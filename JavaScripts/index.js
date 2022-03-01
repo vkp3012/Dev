@@ -177,24 +177,7 @@ FAV_PET = "Dogs";
 /*.............Recall......................*/
 //print in js
 //console.log(a)
-//-------------------------------------------
-
-
-
-//show next line use ---\n
-// str = "How you doing ?\nI am fine how about you?"
-// console.log(str);
-
-//backtick(``) - use the string is next line
-// str = `How you doing ? 
-// I am fine how about you?`;
-// console.log(str);
 //------------------------------------------
-
-//number backtick(``)
-// var num = 5;
-// console.log(`half of ${num} is ${num/2}`);
-
 
 //var has some problems with
 //1). redeclaration is allowed

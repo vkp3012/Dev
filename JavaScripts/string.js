@@ -343,7 +343,7 @@ console.log(trimStr.trim().length);
 
 // 2, 10, 13, 14, 16, 26 27, 28, 29, 32, 52, 61, 67,69, 82, 
 //     functionWithArgs
-// global scope and functions
+//     global scope and functions
 //     Escaping literal quotes
 //     Modify array with indexes
 //     Find the length of string
@@ -353,3 +353,17 @@ console.log(ans13);
 //
 
 console.log("ten"*3)
+
+//show next line use ---\n
+// str = "How you doing ?\nI am fine how about you?"
+// console.log(str);
+
+//backtick(``) - use the string is next line
+// str = `How you doing ? 
+// I am fine how about you?`;
+// console.log(str);
+//------------------------------------------
+
+//number backtick(``)
+// var num = 5;
+// console.log(`half of ${num} is ${num/2}`);
