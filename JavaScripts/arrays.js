@@ -84,6 +84,38 @@ const teams = [["Bulls", 23], ["White Sox", 45]];
 // const teams = [["Bulls", 23], ["White Sox", 45]];
 // This is also called a multi-dimensional array.
 
+/*...................Access Array Data with Indexes.......................*/
+/*
+    We can access the data inside arrays using indexes.
+
+    Array indexes are written in the same bracket notation that strings use, 
+    except that instead of specifying a character, they are specifying an entry in the array. 
+    Like strings, arrays use zero-based indexing, so the first element in an array has an index of 0.
+
+
+Example
+*/
+
+const array = [50, 60, 70];
+array[0];
+const data = array[1];
+
+
+/*
+    array[0] is now 50, and data has the value 60.
+
+    Note: There shouldn't be any spaces between the array name and the square brackets, 
+    like array [0]. Although JavaScript is able to process this correctly, 
+    this may confuse other programmers reading your code.
+
+*/
+
+//Accessing the elements of of an Arrays
+console.log(array[0]);
+console.log(array[1]);
+console.log(array[2]);
+//--------------------------------------------------------
+
 /*...................Arrays are Objects...........................*/
 //Arrays are a special type of objects. 
 //The typeof operator in JavaScript returns "object" for arrays.But, JavaScript arrays are best described as arrays.
@@ -112,11 +144,7 @@ console.table(person1);
 // myArray[2] = myCars;
 
 
-//Accessing the elements of of an Arrays
-//console.log(cars[0]);
-//console.log(cars[1]);
-//console.log(cars[4]);
-//--------------------------------------------------------
+
 
 // Replacing elements in Arrays....
 cars[0] = "TATA";
