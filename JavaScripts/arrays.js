@@ -72,7 +72,19 @@ console.table(cars2)
 // For simplicity, readability and execution speed, use the array literal method.
 //--------------------------------------------------------
 
-//Arrays are Objects
+/*...................Nest one Array within Another Array.................*/
+// You can also nest arrays within other arrays, like below:
+
+const teams = [["Bulls", 23], ["White Sox", 45]];
+//This is also called a multi-dimensional array.
+
+// Nest one Array within Another Array
+// You can also nest arrays within other arrays, like below:
+
+// const teams = [["Bulls", 23], ["White Sox", 45]];
+// This is also called a multi-dimensional array.
+
+/*...................Arrays are Objects...........................*/
 //Arrays are a special type of objects. 
 //The typeof operator in JavaScript returns "object" for arrays.But, JavaScript arrays are best described as arrays.
 
@@ -84,12 +96,6 @@ console.table(cars2)
 //Array:
 const person = ["John", "Doe", 46];
 //Objects use names to access its "members". In this example, person.firstName returns John:
-
-// Nest one Array within Another Array
-// You can also nest arrays within other arrays, like below:
-
-// const teams = [["Bulls", 23], ["White Sox", 45]];
-// This is also called a multi-dimensional array.
 
 //Object:
 const person1 = {firstName:"John", lastName:"Doe", age:46};
