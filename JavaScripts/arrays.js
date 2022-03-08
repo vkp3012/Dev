@@ -1,38 +1,41 @@
-//Arrays is collection of elements
-//Defition:- An array is a special variable, which can hold more than one value.
-//----------------------------------------------------------------
+/* ................Array.......................... */
+/* 
+    1.Arrays is collection of elements
+
+        Defition:- An array is a special variable, which can hold more than one value.
+
+    2.Why Using an Array?
+        If you have a list of items (a list of car names, for example), 
+        storing the cars in single variables could look like this:
+
+        let car1 = "Saab";
+        let car2 = "Volvo";
+        let car3 = "BMW";
+        
+        However, what if you want to loop through the cars and find a specific one? 
+        And what if you had not 3 cars, but 300?
+
+        An array can hold many values under a single name, 
+        and you can access the values by referring to an index number.
 
 
-// Why Using an Array?
-// If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
 
-// let car1 = "Saab";
-// let car2 = "Volvo";
-// let car3 = "BMW";
-// However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+        Creating an Array
+        Using an array literal is the easiest way to create a JavaScript Array.
 
-// The solution is an array!
+        Syntax:
 
-// An array can hold many values under a single name, and you can access the values by referring to an index number.
-//----------------------------------------------------------------
+        const array_name = [item1, item2, ...];
+*/
 
-
-
-// Creating an Array
-// Using an array literal is the easiest way to create a JavaScript Array.
-
-// Syntax:
-
-// const array_name = [item1, item2, ...];      
-//----------------------------------------------------------------
-
-
+//Type 1:- Array 1 is create
 //Define Arrays
 let cars = ["BMW","AUDI","MG",1,2,3,true];
 //console.log(cars);
 
 //----------------------------------------------------------------
 
+//Type 2 :- Array 2 create...........
 //Spaces and line breaks are not important. A declaration can span multiple lines
 
 const car = [
@@ -41,20 +44,24 @@ const car = [
     "BMW"
   ];
 //console.log(car)  
-//------------------------------------------------------------------------------------------------
 
+//---------------------------------------------------------------------------------
+
+//Type 3 :- Array 3 is create..........
 //You can also create an array, and then provide the elements:
 const cars1 = [];
 cars1[0]= "Saab";
 cars1[1]= "Volvo";
 cars1[2]= "BMW";
 //console.log(cars1);
-// In JS u can store different types of values of different types of arrays...........
-//--------------------------------------------------------
 
+
+// In JS u can store different types of values of different types of arrays...........
 // Using the JavaScript Keyword new
 // The following example also creates an Array, and assigns values to it:
 
+
+//Type 4 :- Array 4 is create..........
 // Example
 const cars2 = new Array("Saab", "Volvo", "BMW");
 //console.log(cars2)
@@ -77,6 +84,12 @@ console.table(cars2)
 //Array:
 const person = ["John", "Doe", 46];
 //Objects use names to access its "members". In this example, person.firstName returns John:
+
+// Nest one Array within Another Array
+// You can also nest arrays within other arrays, like below:
+
+// const teams = [["Bulls", 23], ["White Sox", 45]];
+// This is also called a multi-dimensional array.
 
 //Object:
 const person1 = {firstName:"John", lastName:"Doe", age:46};
