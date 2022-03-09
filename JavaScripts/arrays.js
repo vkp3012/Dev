@@ -27,14 +27,14 @@
 
         const array_name = [item1, item2, ...];
 */
-
+console.log("-----Array 1 is create-------");
 //Type 1:- Array 1 is create
 //Define Arrays
 let cars = ["BMW","AUDI","MG",1,2,3,true];
-//console.log(cars);
+console.log(cars);
 
 //----------------------------------------------------------------
-
+console.log("-----Array 2 is create-------");
 //Type 2 :- Array 2 create...........
 //Spaces and line breaks are not important. A declaration can span multiple lines
 
@@ -43,235 +43,35 @@ const car = [
     "Volvo",
     "BMW"
   ];
-//console.log(car)  
+console.log(car)  
 
 //---------------------------------------------------------------------------------
-
+console.log("-----Array 3 is create-------");
 //Type 3 :- Array 3 is create..........
 //You can also create an array, and then provide the elements:
 const cars1 = [];
 cars1[0]= "Saab";
 cars1[1]= "Volvo";
 cars1[2]= "BMW";
-//console.log(cars1);
+console.log(cars1);
 
 
 // In JS u can store different types of values of different types of arrays...........
 // Using the JavaScript Keyword new
 // The following example also creates an Array, and assigns values to it:
 
-
+console.log("-----Array 4 is create-------");
 //Type 4 :- Array 4 is create..........
-// Example
-const cars2 = new Array("Saab", "Volvo", "BMW");
-//console.log(cars2)
-console.table(cars2)
-
-// There is no need to use new Array().
-
-// For simplicity, readability and execution speed, use the array literal method.
-//--------------------------------------------------------
-
-/*...................Nest one Array within Another Array.................*/
-// You can also nest arrays within other arrays, like below:
-
-const teams = [["Bulls", 23], ["White Sox", 45]];
-//This is also called a multi-dimensional array.
-
-// Nest one Array within Another Array
-// You can also nest arrays within other arrays, like below:
-
-// const teams = [["Bulls", 23], ["White Sox", 45]];
-// This is also called a multi-dimensional array.
-
-/*...................Access Array Data with Indexes.......................*/
-/*
-    We can access the data inside arrays using indexes.
-
-    Array indexes are written in the same bracket notation that strings use, 
-    except that instead of specifying a character, they are specifying an entry in the array. 
-    Like strings, arrays use zero-based indexing, so the first element in an array has an index of 0.
-
-
-Example
-*/
-
-const array = [50, 60, 70];
-array[0];
-const data = array[1];
-
-
-/*
-    array[0] is now 50, and data has the value 60.
-
-    Note: There shouldn't be any spaces between the array name and the square brackets, 
-    like array [0]. Although JavaScript is able to process this correctly, 
-    this may confuse other programmers reading your code.
-
-*/
-
-//Accessing the elements of of an Arrays
-console.log(array[0]);
-console.log(array[1]);
-console.log(array[2]);
-//--------------------------------------------------------
-
-// Modify Array Data With Indexes
-// Unlike strings, the entries of arrays are mutable and can be changed freely, even if the array was declared with const.
-
-// Example
-
-// const ourArray = [50, 40, 30];
-// ourArray[0] = 15;
-// ourArray now has the value [15, 40, 30].
-
-// Note: There shouldn't be any spaces between the array name and the square brackets, like array [0]. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
-
-/*...................Arrays are Objects...........................*/
-//Arrays are a special type of objects. 
-//The typeof operator in JavaScript returns "object" for arrays.But, JavaScript arrays are best described as arrays.
-
-// Arrays use numbers to access its "elements". 
-// In this example, 
-
-// person[0] returns John:
-
-//Array:
-const person = ["John", "Doe", 46];
-//Objects use names to access its "members". In this example, person.firstName returns John:
-
-//Object:
-const person1 = {firstName:"John", lastName:"Doe", age:46};
-console.table(person1);
-//Array Elements Can Be Objects
-//JavaScript variables can be objects. Arrays are special kinds of objects.
-
-//you can have variables of different types in the same Array.
-
-//You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
-
-// myArray[0] = Date.now;
-// myArray[1] = myFunction;
-// myArray[2] = myCars;
-
-
-
-
-// Replacing elements in Arrays....
-cars[0] = "TATA";
-//console.log(cars);
-//--------------------------------------------------------
-
-// Adding elements in arrays....
-cars[7] = "Honda";
-//console.log(cars);
-//--------------------------------------------------------
-
-//Method of an Arrays..
-
-//1). POP Method:- This method removed the elements from the last of arrays....
-cars.pop();
-//console.log("after pop an elements\n"+cars);
-//--------------------------------------------------------
-
-//2). Push Method:- This method a new elements at the end of the array....
-cars.push("BMW")
-//console.log("after pushing an elements \n" + cars)
-//--------------------------------------------------------
-
-//3).Unshift Method:- This method add the elements from the starting of arrays....
-cars.unshift("JLR");
-//console.log(cars)
-//--------------------------------
-
-//4).Shift Method:- This method remove the elements from the 0th index of arrays...
-cars.shift();
-//console.log(cars);
-//--------------------------------------------------------
-
-// Find Length
-//console.log(cars.length);
-
-//New element can also be added to an array using the length property:
-
-//Example
-const fruits3 = ["Banana", "Orange", "Apple"];
-fruits3[fruits3.length] = "Lemon";  // Adds "Lemon" to fruits
-console.log(fruits3);
-//WARNING ! :- Adding elements with high indexes can create undefined "holes" in an array
-
-//Example
-const fruits4 = ["Banana", "Orange", "Apple"];
-fruits4[6] = "Lemon";  // Creates undefined "holes" in fruits
-console.log(fruits4);
-//--------------------------------------------------------
-
-//sort arrays
-//// Sorts the array
-cars.sort()
-
-//--------------------------------
-//Accessing the Last Array Element
-//Example
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let fruit = fruits[fruits.length - 1];
-//console.log(fruits);
-
-//Looping Array Elements
-//One way to loop through an array, is using a for loop:
-
-//Example
-const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
-let fLen = fruits1.length;
-for (let i = 0; i < fLen; i++) {
-    fr=fruits1[i];
-    console.table(fr);
-}
-//console.log(fr);
-//--------------------------------------------------------
-
-//Associative Arrays:- 
-//Arrays with named indexes are called associative arrays (or hashes).
-//JavaScript does not support arrays with named indexes.
-//In JavaScript, arrays always use numbered indexes.  
-
-//Example
-const person4 = [];
-person4[0] = "John";
-person4[1] = "Doe";
-person4[2] = 46;
-person4.length;    // Will return 3
-person[0];        // Will return "John"
-
-//WARNING !!:-If you use named indexes, JavaScript will redefine the array to an object.
-//After that, some array methods and properties will produce incorrect results.
-
-//Example:
-const person5 = [];
-person5["firstName"] = "John";
-person5["lastName"] = "Doe";
-person5["age"] = 46;
-person5.length;     // Will return 0
-person5[0];         // Will return undefined
-
-//----------------------------------------------------------------
-
-//The Difference Between Arrays and Objects
-//In JavaScript, arrays use numbered indexes.  
-//In JavaScript, objects use named indexes.
-//Arrays are a special kind of objects, with numbered indexes.
-
-//----------------------------------------------------------------
-//When to Use Arrays. When to use Objects.
-//JavaScript does not support associative arrays.
-//You should use objects when you want the element names to be strings (text).
-//You should use arrays when you want the element names to be numbers.
 //JavaScript new Array()
 //JavaScript has a built in array constructor new Array().
 
 //But you can safely use [] instead.
 
 //These two different statements both create a new empty array named points:
+// Example:- There is no need to use new Array().
+const cars2 = new Array("Saab", "Volvo", "BMW");
+//console.log(cars2)
+console.table(cars2)
 
 //const points = new Array();
 //const points = [];
@@ -300,11 +100,240 @@ console.table(points)
 //const points = new Array(40);  
 
 //----------------------------------------------------------------
-//How to Recognize an Array
-//A common question is: How do I know if a variable is an array?
+// For simplicity, readability and execution speed, use the array literal method.
+//--------------------------------------------------------
 
+/*...................Nest one Array within Another Array.................*/
+// You can also nest arrays within other arrays, like below:
+console.log("-----Nest one Array within Another Array-------");
+const teams = [["Bulls", 23], ["White Sox", 45]];
+console.log(teams);
+//This is also called a multi-dimensional array.
+
+// Nest one Array within Another Array
+// You can also nest arrays within other arrays, like below:
+
+// const teams = [["Bulls", 23], ["White Sox", 45]];
+// This is also called a multi-dimensional array.
+
+/*...................Access Array Data with Indexes.......................*/
+/*
+    We can access the data inside arrays using indexes.
+
+    Array indexes are written in the same bracket notation that strings use, 
+    except that instead of specifying a character, they are specifying an entry in the array. 
+    Like strings, arrays use zero-based indexing, so the first element in an array has an index of 0.
+
+
+Example
+*/
+console.log("-----Access Array Data with Indexes-------");
+const array = [50, 60, 70];
+array[0];
+const data = array[1];
+console.log(data);
+
+
+/*
+    array[0] is now 50, and data has the value 60.
+
+    Note: There shouldn't be any spaces between the array name and the square brackets, 
+    like array [0]. Although JavaScript is able to process this correctly, 
+    this may confuse other programmers reading your code.
+
+*/
+
+//Accessing the elements of of an Arrays
+console.log(array[0]);
+console.log(array[1]);
+console.log(array[2]);
+//--------------------------------------------------------
+
+/*.................Modify Array Data With Indexes..................*/
+/*
+     Unlike strings, the entries of arrays are mutable and can be changed freely, 
+     even if the array was declared with const.
+*/
+
+// Example
+console.log("-----Modify Array Data With Indexes-------");
+const ourArray = [50, 40, 30];
+ourArray[0] = 15;
+console.log(ourArray);
+// ourArray now has the value [15, 40, 30].
+
+/*
+    Note: There shouldn't be any spaces between the array name and the square brackets, like array [0].
+    Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+*/
+
+// Replacing elements in Arrays....
+cars[0] = "TATA";
+//console.log(cars);
+
+/*......................Access Multi-Dimensional Arrays With Indexes........................*/
+/*
+    One way to think of a multi-dimensional array, is as an array of arrays. 
+    When you use brackets to access your array, the first set of brackets refers to the entries in 
+    the outer-most (the first level) array, and each additional pair of brackets refers to 
+    the next level of entries inside.
+
+Example
+*/
+console.log("-----Access Multi-Dimensional Arrays With Indexes-------");
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14]
+];
+
+arr[3];
+arr[3][0];
+arr[3][0][1];
+
+//arr[3] is [[10, 11, 12], 13, 14], arr[3][0] is [10, 11, 12], and arr[3][0][1] is 11.
+ 
+/*
+    Note: There shouldn't be any spaces between the array name and the square brackets, 
+    like array [0][0] and even this array [0] [0] is not allowed. Although JavaScript is able to process 
+    this correctly, this may confuse other programmers reading your code.
+*/
+
+/*...................Arrays are Objects...........................*/
+//Arrays are a special type of objects. 
+//The typeof operator in JavaScript returns "object" for arrays.But, JavaScript arrays are best described as arrays.
+
+// Arrays use numbers to access its "elements". 
+// In this example, 
+
+// person[0] returns John:
+
+//Array:
+console.log("-----Array object-------");
+const person = ["John", "Doe", 46];
+//Objects use names to access its "members". In this example, person.firstName returns John:
+
+//Object:
+const person1 = {firstName:"John", lastName:"Doe", age:46};
+console.table(person1);
+//Array Elements Can Be Objects
+//JavaScript variables can be objects. Arrays are special kinds of objects.
+
+//you can have variables of different types in the same Array.
+
+//You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+
+// myArray[0] = Date.now;
+// myArray[1] = myFunction;
+// myArray[2] = myCars;
+
+
+
+/*.................Adding elements in arrays.......................*/
+console.log("-----Adding element in Array-------");
+cars[7] = "Honda";
+//console.log(cars);
+//--------------------------------------------------------
+
+/*......................Properties of Array......................*/
+
+/*...................Find Length...................*/
+//the length property of an array return the length of an array.
+console.log("-----Array length-------");
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.length;
+console.log(fruits);
+console.log(length);
+
+//--------------------------------
+//Accessing the first Array Element
+//Example
+console.log("-----First Array Element-------");
+let firstElementOfArray = fruits[0];
+console.log(firstElementOfArray);
+
+//--------------------------------
+//Accessing the Last Array Element
+//Example
+console.log("-----Last Array Element-------");
+const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+let lastElementOfArray = fruits[fruits.length - 1];
+console.log(lastElementOfArray);
+
+//Looping Array Elements
+//One way to loop through an array, is using a for loop:
+
+//Example
+console.log("-----Looping Array-------");
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits2.length;
+for (let i = 0; i < fLen; i++) {
+    fr=fruits2[i];
+    console.table(fr);
+}
+console.log(fr);
+//--------------------------------------------------------
+
+//New element can also be added to an array using the length property:
+
+//Example
+console.log("-----added to an array using the length property-------");
+const fruits3 = ["Banana", "Orange", "Apple"];
+fruits3[fruits3.length] = "Lemon";  // Adds "Lemon" to fruits
+console.log(fruits3);
+//WARNING ! :- Adding elements with high indexes can create undefined "holes" in an array
+
+//Example
+const fruits4 = ["Banana", "Orange", "Apple"];
+fruits4[6] = "Lemon";  // Creates undefined "holes" in fruits
+console.log(fruits4);
+//--------------------------------------------------------
+
+/*.............Associative Arrays............................*/
+console.log("-------------Associative Arrays--------------------");
+//Arrays with named indexes are called associative arrays (or hashes).
+//JavaScript does not support arrays with named indexes.
+//In JavaScript, arrays always use numbered indexes.  
+
+//Example
+const person4 = [];
+person4[0] = "John";
+person4[1] = "Doe";
+person4[2] = 46;
+person4.length;    // Will return 3
+person4[0];        // Will return "John"
+
+//WARNING !!:-If you use named indexes, JavaScript will redefine the array to an object.
+//After that, some array methods and properties will produce incorrect results.
+
+//Example:
+const person5 = [];
+person5["firstName"] = "John";
+person5["lastName"] = "Doe";
+person5["age"] = 46;
+person5.length;     // Will return 0
+person5[0];         // Will return undefined
+console.log(person5);
+
+//----------------------------------------------------------------
+
+/*................The Difference Between Arrays and Objects.................*/
+//In JavaScript, arrays use numbered indexes.  
+//In JavaScript, objects use named indexes.
+//Arrays are a special kind of objects, with numbered indexes.
+
+//----------------------------------------------------------------
+
+/*............When to Use Arrays. When to use Objects...............*/
+//JavaScript does not support associative arrays.
+//You should use objects when you want the element names to be strings (text).
+//You should use arrays when you want the element names to be numbers.
+
+
+/*.....................How to Recognize an Array...........................*/
 //The problem is that the JavaScript operator typeof returns "object":
-
+console.log("--------How to Recognize an Array-----------");
 const fruits7 = ["Banana", "Orange", "Apple"];
 let type = typeof fruits7;
 console.log(type);
@@ -312,29 +341,63 @@ console.log(type);
 
 //Solution 1:
 //To solve this problem ECMAScript 5 (JavaScript 2009) defined a new method Array.isArray():
-
 Array.isArray(fruits7);
+
 //Solution 2:
 //The instanceof operator returns true if an object is created by a given constructor:
 
-//const fruits = ["Banana", "Orange", "Apple"];
+const fruits8 = ["Banana", "Orange", "Apple"];
+fruits8 instanceof Array;
 
-//fruits instanceof Array;
+//sort arrays
+//// Sorts the array
+cars.sort()
 
-//Converting Arrays to Strings
+
+/*.................Method of an Arrays.......................*/
+
+//1).Converting Arrays to Strings
 //The JavaScript method ...toString().. converts an array to a string of (comma separated) array values.
 
 //Example
+console.log("-------Converting Arrays to Strings---------- ");
 const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits9.toString())
 
 //The join() method also joins all array elements into a string.
+const fruits10 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits10.join("*"));
 //------------------------------------------------------------------------------------------------
 
-//Merging (Concatenating) Arrays
+//2). POP Method:- This method removed the elements from the last of arrays....
+console.log("----------Pop Method-----------");
+fruits9.pop();
+//console.log("after pop an elements\n"+cars);
+//--------------------------------------------------------
+
+//2). Push Method:- This method a new elements at the end of the array....
+console.log("--------------Push Method------------------");
+fruit9.push("Kiwi")
+//console.log("after pushing an elements \n" + cars)
+//--------------------------------------------------------
+
+//3).Unshift Method:- This method add the elements from the starting of arrays....
+console.log("--------------Unshift Method------------------");
+fruit9.unshift("Grapes");
+//console.log(fruits9)
+//--------------------------------
+
+//4).Shift Method:- This method remove the elements from the 0th index of arrays...
+console.log("--------------shift Method------------------");
+fruits9.shift();
+//console.log(fruits9);
+//--------------------------------------------------------
+
+/*.....................Merging (Concatenating) Arrays.....................*/
 //The concat() method creates a new array by merging (concatenating) existing arrays:
 
 //Example (Merging Two Arrays)
+console.log("--------------Merging Arrays------------------");
 const myGirls = ["Cecilie", "Lone"];
 const myBoys = ["Emil", "Tobias", "Linus"];
 
