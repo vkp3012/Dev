@@ -371,25 +371,37 @@ console.log(fruits10.join("*"));
 
 //2). POP Method:- This method removed the elements from the last of arrays....
 console.log("----------Pop Method-----------");
-fruits9.pop();
+const fruits11 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits11);
+fruits11.pop();
+console.log(fruits11);
 //console.log("after pop an elements\n"+cars);
 //--------------------------------------------------------
 
 //2). Push Method:- This method a new elements at the end of the array....
 console.log("--------------Push Method------------------");
-fruit9.push("Kiwi")
+const fruits22 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits22);
+fruits22.push("Kiwi")
+console.log(fruits22);
 //console.log("after pushing an elements \n" + cars)
 //--------------------------------------------------------
 
 //3).Unshift Method:- This method add the elements from the starting of arrays....
 console.log("--------------Unshift Method------------------");
-fruit9.unshift("Grapes");
+const fruits17 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits17);
+fruits17.unshift("Grapes");
+console.log(fruits17);
 //console.log(fruits9)
 //--------------------------------
 
 //4).Shift Method:- This method remove the elements from the 0th index of arrays...
 console.log("--------------shift Method------------------");
-fruits9.shift();
+const fruits18 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits18);
+fruits18.shift();
+console.log(fruits18);
 //console.log(fruits9);
 //--------------------------------------------------------
 
@@ -423,10 +435,11 @@ const myChildren3 = arr4.concat("Peter");
 console.log(myChildren3);
 //------------------------------------------------------------------------------------------------
 
-//JavaScript Array splice()
+/*...........................JavaScript Array splice().........................*/
 //The splice() method can be used to add new items to an array:
 
 //Example
+console.log("--------------Array Splice()-----------------");
 const fruits6 = ["Banana", "Orange", "Apple", "Mango"];
 fruits6.splice(2, 0, "Lemon", "Kiwi");
 console.log(fruits6);
@@ -457,11 +470,12 @@ console.log(fru);
 //The rest of the parameters are omitted. No new elements will be added.
 //------------------------------------------------------------------------------------------------
 
-//JavaScript Array slice()
+/*...................JavaScript Array slice().......................*/
 //The slice() method slices out a piece of an array into a new array.
 //This example slices out a part of an array starting from array element 1 ("Orange"):
 
 //Example
+console.log("----------------Array Slice()------------");
 const frui = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 const citrus = frui.slice(1);
 console.log(citrus);
@@ -482,28 +496,30 @@ console.log(citrus2);
 //-----------------------------------------------------------------------
 
 
-//Sorting an Array
+/*................................Sorting an Array...............................*/
 //The sort() method sorts an array alphabetically:
 
 //Example
+console.log("----------------Sorting an Array---------------------");
 const fruits13 = ["Banana", "Orange", "Apple", "Mango"];
 fruits13.sort();
 console.log(fruits13);
 //-----------------------------------------------------------------------
 
-//Reversing an Array
+/*..................Reversing an Array..........................*/
 //The reverse() method reverses the elements in an array.
 
 // You can use it to sort an array in descending order:
 
 // Example
+console.log("------------------Reversing an Array----------------");
 const fruits14 = ["Banana", "Orange", "Apple", "Mango"];
 fruits14.sort();
 fruits14.reverse();
 console.log(fruits14);
 
 //----------------------------------------------------------------
-//Numeric Sort
+/*.....................Numeric Sort..................................*/
 // By default, the sort() function sorts values as strings.
 // This works well for strings ("Apple" comes before "Banana").
 // However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
@@ -511,6 +527,7 @@ console.log(fruits14);
 // You can fix this by providing a compare function:
 
 // Example
+console.log("---------------Numeric Sort-------------------");
 const points12 = [40, 100, 1, 5, 25, 10];
 points12.sort(function(a, b){   
         return a - b
@@ -524,7 +541,7 @@ points13.sort(function(a, b){
 console.log(points13);
 // Explain Example..
 
-// The Compare Function
+/*...................The Compare Function.........................*/
 // The purpose of the compare function is to define an alternative sort order.
 // The compare function should return a negative, zero, or positive value, depending on the arguments:
 
@@ -542,15 +559,16 @@ console.log(points13);
 // The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will sort 40 as a value lower than 100.
 //------------------------------------------------------------------------------------------------
 
-//Sorting an Array in Random Order
+/*.........................Sorting an Array in Random Order...........................*/
 //Example
+console.log("-----------------Sorting an Array in Random Order-------------------------");
 const points14 = [40, 100, 1, 5, 25, 10];
 points14.sort(function(a, b){return 0.5 - Math.random()});
 console.log(points14);
 
 //------------------------------------------------------------------------------------------------
 
-// The Fisher Yates Method
+/*.......................The Fisher Yates Method......................*/
 // The above example, array.sort(), is not accurate, it will favor some numbers over the others.
 
 // The most popular correct method, is called the Fisher Yates shuffle, and was introduced in data science as early as 1938!
@@ -558,6 +576,7 @@ console.log(points14);
 // In JavaScript the method can be translated to this:
 
 // Example
+console.log("------------The Fisher Yates Method----------------------------");
 const points15 = [40, 100, 1, 5, 25, 10];
 
 for (let i = points15.length -1; i > 0; i--) {
@@ -578,7 +597,8 @@ points16.sort(function(a, b){
 console.log("The Lowest value is " + points16[0]);
 console.log("--------------------------------------");
 
-//2D Arrays..
+/*.................2D Arrays...........................*/
+console.log("----------------2D Arrays-------------------");
 let arrays2d = [
     [1,2,3],
     [4, ,6],
