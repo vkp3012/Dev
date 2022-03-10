@@ -5,6 +5,7 @@
 //node wcat.js f1.txt f2.txt f3.txt
 
 //reqire fs module
+const { Console } = require("console");
 const fs = require("fs");
 
 //remove 0th and 1st element in input array
@@ -41,7 +42,27 @@ for(let i =0;i<fileArr.length;i++){
     content += filecontent + "\n";
 }
 
-console.log(content);
+console.table(content);
 
 let contentArr = content.split("\n");
-console.log(contentArr);
+console.table(contentArr);
+
+//check if -s present or not
+let isPresent = optionsArr.includes("-s");
+
+if(isPresent){
+    for(let i = 1;i<contentArr.length;i++){
+        if(contentArr[i]=="" && contentArr[i-1]==""){
+           contentArr[i] = null; 
+        }else if(contentArr[i]=="" && contentArr[i-1]==null){
+            contentArr[i] = null; 
+        }
+    }
+    let tempArr = [];
+    for(let i =0;i<contentArr.length;i++){
+        if(contentArr[i] != null){
+            tempArr.push(contentArr[i]);
+        }
+    }
+    console.log("data after removing extra lines\n",tempArr);
+}
