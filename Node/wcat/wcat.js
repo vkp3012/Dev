@@ -39,12 +39,12 @@ for(let i =0;i<fileArr.length;i++){
 let content = "";
 for(let i =0;i<fileArr.length;i++){
     let filecontent= fs.readFileSync(fileArr[i]);
-    content += filecontent + "\n";
+    content += filecontent + "\r\n";
 }
 
 console.table(content);
 
-let contentArr = content.split("\n");
+let contentArr = content.split("\r\n");
 console.table(contentArr);
 
 //check if -s present or not
@@ -58,6 +58,7 @@ if(isPresent){
             contentArr[i] = null; 
         }
     }
+    console.table(contentArr);
     let tempArr = [];
     for(let i =0;i<contentArr.length;i++){
         if(contentArr[i] != null){
