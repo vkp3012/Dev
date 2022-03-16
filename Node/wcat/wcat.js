@@ -118,5 +118,13 @@ function modifiyContentByB() {
     }
 }
 
+// check -c is present or not 
+let isCPresent = optionsArr.includes("-c");
+let path = require("path")
+if(isCPresent){
+    let dirpath = path.join(__dirname,"wcat");
+    let createfile = fs.writeFileSync(fileName);
+}
+
 
 console.log(contentArr);
