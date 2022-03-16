@@ -98,5 +98,9 @@ function copyFileToDest(srcPath,fullPathOfFile,folderName){
     fs.copyFileSync(fullPathOfFile,destFileName)
 }
 
-let srcPath="C:/Users/Vivek Kumar Singh/Desktop/web/Node/fileOrganizer/downloads"
-organize(srcPath);
+// let srcPath="C:/Users/Vivek Kumar Singh/Desktop/web/Node/fileOrganizer/downloads"
+// organize(srcPath);
+
+module.exports={
+    organize : organize
+}
