@@ -1,5 +1,6 @@
 const cheerio = require("cheerio");
-
+//cheerio
+// Cheerio parses HTML and it traverses the html so that data can be manipulated according to user's needs
 let html = `<ul id = "fruits">
     <li class = "apple">Apple<li>
     <li class = "orange">Orange<li>
