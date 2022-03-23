@@ -25,13 +25,41 @@
 
     const array_name = [item1, item2, ...];
 
+# Nest one Array within Another Array
+
+    1.This is also called a multi-dimensional array.
+    2.Nest one Array within Another Array
+    3.You can also nest arrays within other arrays, like below:
+
+    Example:-
+    const teams = [["Bulls", 23], ["White Sox", 45]];
+    console.log(teams);
+
+# Modify Array Data With Indexes
+
+     Unlike strings, the entries of arrays are mutable and can be changed freely, even if the array was declared with const.
+
+    Example
+    const ourArray = [50, 40, 30];
+    console.log(ourArray);
+    
+    // Replacing elements in Arrays....
+    ourArray[0] = 15;
+    console.log(ourArray);
+
+    // ourArray now has the value [15, 40, 30].
+
+/*
+    Note: There shouldn't be any spaces between the array name and the square brackets, like array [0].
+    Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+*/
+
 # Access Array Data with Indexes
 
     1.Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. 
     2. Like strings, arrays use zero-based indexing, so the first element in an array has an index of 0.
 
-
-Example:- 
-        const array = [50, 60, 70];
-        const data = array[1];
-        console.log(data);
+    Example:- 
+            const array = [50, 60, 70];
+            const data = array[1];
+            console.log(data);
