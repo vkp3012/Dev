@@ -34,7 +34,7 @@ function treeHelper(targetPath, indent) {
 }
 
 module.exports = {
-  tree: tree,
+  tree: treeFn,
 };
 
 // let srcPath="C:/Users/Vivek Kumar Singh/Desktop/web/Node/fileOrganizer/downloads"
