@@ -1,7 +1,7 @@
 let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595"
 
 const request = require("request");
-const cheerio = require("cheerio");
+const cheerio = require('cheerio');
 const allMatchObj = require("./allMatch");
 
 request(url,cb);
