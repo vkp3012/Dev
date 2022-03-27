@@ -4,7 +4,8 @@ const path = require("path");
 
 function treeFn(dirPath) {
   if (dirPath == undefined) {
-    console.log("Please Enter a Valid Path");
+    //console.log("Please Enter a Valid Path");
+    treeHelper(process.cwd(),"");
     return;
   } else {
     let doesExist = fs.existsSync(dirPath);
