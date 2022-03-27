@@ -1,5 +1,10 @@
+// require all package
 const request = require("request");
 const cheerio = require("cheerio");
+const fs = require("fs");
+const path = require("path");
+const xlsx = require("xlsx");
+
 
 function getInfoFromScorecard(url) {
     //console.log("from scorecards.js ",url);
@@ -35,17 +40,18 @@ function getMatchDetails(html){
 
     //3. get result
     let matchResEle = selecTool(".match-info.match-info-MATCH.match-info-MATCH-half-width>.status-text");
-    console.log("Result ",matchResEle.text());
+    let matchResult = matchResEle.text();
+    console.log(matchResult);
     
 
     //4. get team names
     let teamNames = selecTool(".name-detail>.name-link");
     // console.log(teamNames.text());
 
-    let team1 = selecTool(teamNames[0]).text();
-    let team2 = selecTool(teamNames[1]).text();
-    console.log("Team 1", team1);
-    console.log("Team 2",team2);
+    let ownTeam = selecTool(teamNames[0]).text();
+    let opponentTeam = selecTool(teamNames[1]).text();
+    console.log("Team 1", ownTeam);
+    console.log("Team 2",opponentTeam);
     console.log("-------------------------------------");
     //5. get innings 
 
@@ -85,14 +91,79 @@ function getMatchDetails(html){
           `playerName -> ${playerName} runsScored ->  ${runs} ballsPlayed ->  ${balls} numbOfFours -> ${numberOf4} numbOfSixes -> ${numberOf6}  strikeRate-> ${sr}`
         );
 
-
+        processInformation(
+          dateOfMatch,
+          venueOfMatch,
+          matchResult,
+          ownTeam,
+          opponentTeam,
+          playerName,
+          runs,
+          balls,
+          numberOf4,
+          numberOf6,
+          sr
+        );
       }
     }
+  }   
+  // console.log(htmlString);
+   
+  function processInformation(dateOfMatch,venueOfMatch,matchResult,ownTeam,opponentTeam,playerName,runs,balls,numberOf4,numberOf6,sr){
+    let teamNamePath = path.join(__dirname,"IPL",ownTeam);
+    if(!fs.existsSync(teamNamePath)){
+      fs.mkdirSync(teamNamePath);
+    }
+
+    let playerPath = path.join(teamNamePath,playerName + ".xlsx");
+    let content = excelReader(playerPath,playerName);
+
+    let playerObj = {
+      dateOfMatch,
+      venueOfMatch,
+      matchResult,
+      ownTeam,
+      opponentTeam,
+      playerName,
+      runs,
+      balls,
+      numberOf4,
+      numberOf6,
+      sr
+    };
+
+    content.push(playerObj);
+    //this function writes all the content into excel sheet , and places that excel sheet data into playerPath-> rohitSharma.xlsx
+    excelWriter(playerPath,content,playerName);
   }
 
-    
-  // console.log(htmlString);
-        
+  // console.log(htmlstring);
+}
+
+//this function reads the data from excel file
+function excelReader(playerPath,sheetName){
+  if(!fs.existsSync(playerPath)){
+    //if playerPath does not exists, this means that we have never placed any data into that file 
+    return [];
+  }
+
+  //if playerPath already has some data in it
+  let workBook = xlsx.readFile(playerPath);
+  //A dictionary of the worksheets in the workbook.use sheetNames to reference these.
+  let excelData = workBook.Sheets[sheetName];
+  let playerObj = xlsx.utils.sheet_to_json(excelData);
+  return playerObj;
+}
+
+function excelWriter(playerPath,jsObject,sheetName){
+  //create a new workbook
+  let newWorkBook = xlsx.utils.book_new();
+  //converts an array of js Object to a worksheet.
+  let newWorkSheet = xlsx.utils.json_to_sheet(jsObject);
+  //it appends a worksheet to a workbook.
+  xlsx.utils.book_append_sheet(newWorkBook,newWorkSheet,sheetName);
+  //attempts to write or download workbook data tom file
+  xlsx.writeFile(newWorkBook,playerPath);
 }
 
 
