@@ -53,22 +53,22 @@ function getMatchDetails(html){
     console.log("Team 1", ownTeam);
     console.log("Team 2",opponentTeam);
     console.log("-------------------------------------");
-    //5. get innings 
 
-  let allBatsmenTable = selecTool(".table.batsman tbody");
-  console.log("number of batsmen tables are ->   ",allBatsmenTable.length);
-  let htmlString = "";
-  let count = 0;
+//5. get innings 
+let allBatsmenTable = selecTool(".table.batsman tbody");
+  //console.log("number of batsmen tables are ->   ",allBatsmenTable.length);
+  //let htmlString = "";
+  //let count = 0;
   for (let i = 0; i < allBatsmenTable.length; i++) {
-    htmlString = htmlString + selecTool(allBatsmenTable[i]).html();
-    //Get the descendants(table rows ) of each element (table )
+    //htmlString = htmlString + selecTool(allBatsmenTable[i]).html();
+    //Get the descendants(table rows) of each element (table )
     let allRows = selecTool(allBatsmenTable[i]).find("tr"); // -> data of batsmen + empty rows 
     
-    for (let i = 0; i < allRows.length; i++) {
+    for (let j = 0; j < allRows.length; j++) {
       //Check to see if any of the matched elements have the given className
-      let row = selecTool(allRows[i]);
-      let firstColmnOfRow = row.find("td")[0];
-      if (selecTool(firstColmnOfRow).hasClass("batsman-cell")) {
+      let row = selecTool(allRows[j]);
+      let allcol = row.find("td");
+      if (selecTool(allcol[0]).hasClass("batsman-cell")) {
         //will be getting valid data
         // count++;
         // console.log("inside " + count);
@@ -79,13 +79,13 @@ function getMatchDetails(html){
         //     console.log(selecTool(row.find("td")[i]).text());
         //   }
         // }
-        let playerName = selecTool(row.find("td")[0]).text();
         // console.log(playerName);
-        let runs = selecTool(row.find("td")[2]).text();
-        let balls = selecTool(row.find("td")[3]).text();
-        let numberOf4 = selecTool(row.find("td")[5]).text();
-        let numberOf6 = selecTool(row.find("td")[6]).text();
-        let sr = selecTool(row.find("td")[7]).text();
+        let playerName = selecTool(allcol[0]).text();
+        let runs = selecTool(allcol[2]).text();
+        let balls = selecTool(allcol[3]).text();
+        let numberOf4 = selecTool(allcol[5]).text();
+        let numberOf6 = selecTool(allcol[6]).text();
+        let sr = selecTool(allcol[7]).text();
 
         console.log(
           `playerName -> ${playerName} runsScored ->  ${runs} ballsPlayed ->  ${balls} numbOfFours -> ${numberOf4} numbOfSixes -> ${numberOf6}  strikeRate-> ${sr}`
@@ -108,13 +108,12 @@ function getMatchDetails(html){
     }
   }   
   // console.log(htmlString);
-   
+
+
   function processInformation(dateOfMatch,venueOfMatch,matchResult,ownTeam,opponentTeam,playerName,runs,balls,numberOf4,numberOf6,sr){
     let teamNamePath = path.join(__dirname,"IPL",ownTeam);
-    if(!fs.existsSync(teamNamePath)){
-      fs.mkdirSync(teamNamePath);
-    }
-
+    dirCreater(teamNamePath)
+    
     let playerPath = path.join(teamNamePath,playerName + ".xlsx");
     let content = excelReader(playerPath,playerName);
 
@@ -136,8 +135,13 @@ function getMatchDetails(html){
     //this function writes all the content into excel sheet , and places that excel sheet data into playerPath-> rohitSharma.xlsx
     excelWriter(playerPath,content,playerName);
   }
-
   // console.log(htmlstring);
+}
+
+function dirCreater(teamNamePath){
+  if(!fs.existsSync(teamNamePath)){
+    fs.mkdirSync(teamNamePath);
+  }
 }
 
 //this function reads the data from excel file
