@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer")
 let email = "vivekpatel301295@gmail.com"
-let password = "Vkp@9935"
+let password = ""
 let cTab;
 let browserOpenPromise = puppeteer.launch(
     {
