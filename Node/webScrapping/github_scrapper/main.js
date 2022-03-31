@@ -16,10 +16,10 @@ function cb(err,response,html){
 function extractLink(html){
     let $ = cheerio.load(html);
     let anchorElem = $(".no-underline.flex-1.d-flex.flex-column")
-    for(let i = 0;i<anchorElem.length;i++){
+    for(let i = 0;i<3;i++){
         let link = $(anchorElem[i]).attr("href")
-        //console.log(link);
+        // console.log(link);
         let fullLink = "https://github.com" + link;
-        console.log(fullLink.length[3]);
+        console.log(fullLink);
     }
 }
