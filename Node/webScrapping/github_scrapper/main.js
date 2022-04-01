@@ -9,6 +9,8 @@ request(url,cb);
 function cb(err,response,html){
     if(err){
         console.log(err);
+    }else if(response.statusCode == 404){
+        console.log("Page Not Found");
     }else{
         extractLink(html)
     }
@@ -22,7 +24,7 @@ function extractLink(html){
         let topic = link.split("/").pop();
         // console.log(link);
         let fullLink = "https://github.com" + link;
-        // console.log(fullLink);
+        console.log(fullLink);
         repolink(fullLink,topic);
     }
 }
