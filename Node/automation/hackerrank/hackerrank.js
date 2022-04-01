@@ -25,7 +25,7 @@ browserOpenPromise
         let visitingLoginPagePromise = cTab.goto("https://www.hackerrank.com/auth/login");
         return visitingLoginPagePromise;
     })
-    .then(function(){
+    .then(function(data){
         console.log("Hackerrank login Page opened");
         let emailTypePromise = cTab.type("input[name='username']",email);
         return emailTypePromise;
