@@ -79,8 +79,8 @@ browserOpenPromise //fulfill
                                 //link to the question to besolved, idx of the linksArr
         let questionWillBeSolvedPromise = questionSolver(linksArr[0], 0);
         return questionWillBeSolvedPromise;
-    }).
-    then(function () {
+    })
+    .then(function () {
         console.log("question is solved");
     })
     .catch(function(err){
@@ -144,10 +144,19 @@ function questionSolver(url,idx){
                 let xKeyPressPromised = cTab.keyboard.press("x");
                 return xKeyPressPromised;
             })
+            .then(function () {
+                let controlDownPromise = cTab.keyboard.up("Control");
+                return controlDownPromise;
+              })
             .then(function(){
                 //select the editor promise
-                let cursorOnEditorPromise = cTab.click( ".monaco-editor.no-user-select.vs");
+                let cursorOnEditorPromise = cTab.click(".monaco-editor.no-user-select.vs");
                 return cursorOnEditorPromise;
+            })
+            .then(function(){
+                //control key is pressed promise
+                let controlPressedPromise = cTab.keyboard.press("Control");
+                return controlPressedPromise;
             })
             .then(function(){
                 let aKeyPressPromised = cTab.keyboard.press("a");
@@ -162,7 +171,7 @@ function questionSolver(url,idx){
                 return submitButton;
             })
             .then(function () {
-                let controlDownPromise = curTab.keyboard.up("Control");
+                let controlDownPromise = cTab.keyboard.up("Control");
                 return controlDownPromise;
               })
               .then(function () {
