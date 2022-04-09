@@ -36,17 +36,17 @@ browserOpenPromise //fulfill
         // console.log(data);
         console.log("Hackerrank login Page opened");
         //selector(where to type),data(what to type)
-        let emailTypePromise = cTab.type("input[name='username']",email);
+        let emailTypePromise = cTab.type("input[name='username']",email,{delay:100});
         return emailTypePromise;
     })
     .then(function(){
         console.log("email is type");
-        let passwordTypePromise = cTab.type("input[name='password']",password);
+        let passwordTypePromise = cTab.type("input[name='password']",password,{delay:100});
         return passwordTypePromise;
     })
     .then(function(){
         console.log("password is type");
-        let willbeLoggedInPromise = cTab.click(".ui-btn.ui-btn-large.ui-btn-primary.auth-button.ui-btn-styled");
+        let willbeLoggedInPromise = cTab.click(".ui-btn.ui-btn-large.ui-btn-primary.auth-button.ui-btn-styled",{delay:50});
         return willbeLoggedInPromise;
     })
     .then(function(){
@@ -78,6 +78,11 @@ browserOpenPromise //fulfill
         //question solve krna h
                                 //link to the question to besolved, idx of the linksArr
         let questionWillBeSolvedPromise = questionSolver(linksArr[0], 0);
+        for (let i = 1; i < linksArr.length; i++){
+            questionWillBeSolvedPromise = questionWillBeSolvedPromise.then(function () {
+              return questionSolver(linksArr[i], i);
+            })
+        }
         return questionWillBeSolvedPromise;
     })
     .then(function () {
@@ -124,7 +129,7 @@ function questionSolver(url,idx){
             })
             .then(function(){
                 //select the box where code will be typed
-                let waitForTextBoxPromise = waitAndClick(".custominput");
+                let waitForTextBoxPromise = cTab.waitForSelector(".custominput");
                 return waitForTextBoxPromise;
             })
             .then(function(){
@@ -133,7 +138,7 @@ function questionSolver(url,idx){
             })
             .then(function(){
                 //control key is pressed promise
-                let controlPressedPromise = cTab.keyboard.press("Control");
+                let controlPressedPromise = cTab.keyboard.down("Control");
                 return controlPressedPromise;
             })
             .then(function(){
@@ -155,32 +160,31 @@ function questionSolver(url,idx){
             })
             .then(function(){
                 //control key is pressed promise
-                let controlPressedPromise = cTab.keyboard.press("Control");
+                let controlPressedPromise = cTab.keyboard.down("Control");
                 return controlPressedPromise;
             })
             .then(function(){
-                let aKeyPressPromised = cTab.keyboard.press("a");
+                let aKeyPressPromised = cTab.keyboard.press("a",{delay:100});
                 return aKeyPressPromised;
             })
             .then(function(){
-                let vKeyPressPromised = cTab.keyboard.press("v");
+                let vKeyPressPromised = cTab.keyboard.press("v",{delay:100});
                 return vKeyPressPromised;
-            })
-            .then(function(){
-                let submitButton = cTab.click(".hr-monaco-submit");
-                return submitButton;
             })
             .then(function () {
                 let controlDownPromise = cTab.keyboard.up("Control");
                 return controlDownPromise;
               })
-              .then(function () {
-                console.log("code submitted successfully");
-                resolve();
-              })
-              .catch(function (err) {
-                reject(err);
-              });
-            
+            .then(function(){
+            let submitButton = cTab.click(".hr-monaco-submit");
+            return submitButton;
+            })
+            .then(function () {
+            console.log("code submitted successfully");
+            resolve();
+            })
+            .catch(function (err) {
+            reject(err);
+            });          
     });
 }
