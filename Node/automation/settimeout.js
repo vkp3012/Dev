@@ -57,9 +57,20 @@
 // }
 
 
-for (let i = 1; i <= 10; i++){
-    // hint: closures and scope -> wrapping
-    setTimeout(function () {
-        console.log(i);
-    }, 2000*i);
+// for (let i = 1; i <= 10; i++){
+//     // hint: closures and scope -> wrapping
+//     setTimeout(function () {
+//         console.log(i);
+//     }, 2000*i);
+// }
+
+for(var i = 1; i <= 10; i++){
+    print(i);
+}
+
+
+function print(i){
+    setTimeout(function(){
+        console.log(i)
+    },2000*i);
 }
