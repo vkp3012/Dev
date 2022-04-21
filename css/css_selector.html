@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* simple Selector */
+        /* 1.name tag  */
+        h1 {
+            color: lightblue;
+        }
+
+        p {
+            background-color: lightpink;
+        }
+
+        /* 2.id tag  */
+        #unique {
+            text-decoration: underline;
+        }
+
+        /* class selector */
+        .common {
+            background-color: lightgreen;
+        }
+
+        /* combinator selector  */
+        /* 1.space */
+        .common p {
+            color: lightgreen;
+        }
+        /* 2.immediate */
+        .commom>p{
+            background-color: yellow;
+        }
+
+        /* 3.sibling */
+        .commom+div{
+            color:red;
+        }
+
+        /* 4.general sibling */
+        .common ~ div{
+            background-color: lightgreen;
+        }
+
+        /* Attribute selector */
+        label[for]{
+            color:pink;
+        }
+
+        label[for="name"]{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Simple Selector  -->
+    <h1>Welcome To My Webpage</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, illo atque aut asperiores quo placeat
+        accusantium repellendus quod tempora est non mollitia nostrum laborum odit enim laboriosam quia sunt molestias?
+    </p>
+
+    <h2 class="common">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit facere hic voluptates
+        ipsa aliquam architecto! Autem neque expedita perspiciatis delectus magnam quisquam dolorem, explicabo ipsam at
+        consectetur molestias consequatur vitae.
+    </h2>
+
+    <h3 id="unique">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam velit obcaecati reprehenderit odit
+        voluptate sapiente consequatur repellat ipsa vero. Similique veritatis eius minus quae cupiditate exercitationem
+        nihil facere laboriosam corrupti!
+    </h3>
+
+    <!-- combinator selector  -->
+    <div class="commom common2">
+        <div class="something1">
+            Something
+        </div>
+        <div class="something2">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti rem quisquam esse eum maiores
+                voluptates neque eaque nisi ipsa, quaerat corrupti accusamus distinctio odio id earum perspiciatis
+                placeat veritatis ad.
+            </p>
+        </div>
+        <div class="something3"></div>
+        <p>Hello!!!</p>
+    </div>
+    <div class="sib">I'm Sibling.</div>
+
+    <!-- Attribute Selector  -->
+
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <label for="pass">Password</label>
+        <input type="password" id="pass">
+    </form>
+
+</body>
+
+</html>

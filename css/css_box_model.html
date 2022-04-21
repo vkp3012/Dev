@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            margin:11rem;
+        }
+        .login{
+            display: flex;
+            flex-direction: column;
+            background-color: lightblue;
+            border:5px solid red;
+            width: 25rem;
+            height: 25rem;
+        }
+        button{
+            width: 6rem;
+            height: 3rem;
+            border: 5px solid red;
+            background-color: lightgreen;
+            padding: 1rem;
+            color: white;
+            margin: 1rem;
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+<body>
+    <form action="login" class="login">
+        <label for="name" class="name">Name</label>
+        <input type="name" id = "name">
+        <div></div>
+        <label for="email" class="email">Email</label>
+        <input type="name" id = "email">
+        <div></div>
+        <label for="pass" class="name">Password</label>
+        <input type="password" id = "pass">
+        <div></div>
+        <button type="submit">Login</button>
+    </form>
+    
+</body>
+</html>
