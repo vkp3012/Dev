@@ -8,11 +8,11 @@
     <title>Document</title>
     <style>
         .cell {
-            border: 1px solid;
+            border: 2px solid black;
             margin: auto;
-            margin-top: 10rem;
-            height: 20rem;
-            width: 20rem;
+            margin-top: 2rem;
+            height: 50rem;
+            width: 60rem;
             display: flex;
         }
     </style>
@@ -21,6 +21,15 @@
 <body>
     <div class="cell"></div>
     
+    <script>
+        let cells = document.querySelector(".cell");
+        cells.addEventListener("mouseover",(e)=>{
+            cells.style.backgroundImage = "url(./jail.png)"
+        })
+        cells.addEventListener("mouseout",(e)=>{
+            cells.style.backgroundImage = "none"
+        })
+    </script>
 </body>
 
 </html>
