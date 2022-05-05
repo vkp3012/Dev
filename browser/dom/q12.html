@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBase</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 2rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h1{
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+        }
+
+        table{
+            border: 5px solid black;
+            border-collapse: collapse;
+        }
+
+        td,th{
+            border:2px solid rgb(21, 21, 21);
+            padding-left: 2rem;
+        }
+
+        thead{
+            background-color: black;
+            color: white;
+        }
+
+        form{
+            margin: auto;
+            margin-top: 2rem;
+        }
+
+        input{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">DATABASE</h1>
+
+    <table>
+        <colgroup>
+            <col>
+            <col style="background-color: yellow">
+          </colgroup>
+        <thead>
+            <tr>
+                <caption>University of Washington</caption>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th colspan="5">Subject
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Math</th>
+                        <th>English</th>
+                        <th>Chemistry</th>
+                        <th>Hindi</th>
+                        <th>Physics</th>
+                    </tr>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Vivek</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Amit</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="">
+        <label for="name">Name:
+            <input type="text" id="name">
+        </label>
+        <label for="math">Math:
+            <input type="text" id="math">
+        </label>
+        <label for="eng">English:
+            <input type="text" id="eng">
+        </label>
+        <label for="che">Chemistry:
+            <input type="text" id="che">
+        </label>
+        <label for="hindi">Hindi:
+            <input type="text" id="hindi">
+        </label>
+        <label for="Physics">Physics:
+            <input type="text" id="Physics">
+        </label>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        let formElem = document.querySelector("form")
+        formElem.addEventListener("submit",(e) =>{
+            e.preventDefault();
+
+            let name = document.querySelector("#name").value;
+            let math = document.querySelector("#math").value;
+            let eng = document.querySelector("#eng").value;
+            let che = document.querySelector("#che").value;
+            let hindi = document.querySelector("#hindi").value;
+            let phy = document.querySelector("#Physics").value;
+            let sno = document.querySelectorAll("tbody tr").length+1;
+            let tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${sno}</td>
+                <td>${name}</td>
+                <td>${math}</td>
+                <td>${eng}</td>
+                <td>${che}</td>
+                <td>${hindi}</td>
+                <td>${phy}</td>
+            `;
+
+            let tbody = document.querySelector("tbody")
+            tbody.appendChild(tr);
+        })
+    </script>
+</body>
+</html>
