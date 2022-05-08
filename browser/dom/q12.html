@@ -1,128 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataBase</title>
+
+    <script src="https://kit.fontawesome.com/3055f91a99.js"></script>
     <style>
-        *{
+        @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+        * {
             box-sizing: border-box;
         }
 
-        body{
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-rendering: optimizeLegibility !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+
+        header#main-header {
+            display: flex;
+            justify-content: flex-start;
+            width: 100vw;
+            height: 72px;
+            position: relative;
+            background-color: #283c4a;
+            z-index: 1;
+        }
+
+        header#main-header>div {
+            width: 5188px;
             display: flex;
             align-items: center;
-            flex-direction: column;
-            font-size: 2rem;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            justify-content: space-between;
         }
 
-        h1{
+        header#main-header>div>div> span#header-picture-menu-bars {
+            /* display: flex; */
+            width: 28px;
+            height: 8px;
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        header#main-header>div>div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header#main-header>div>div h1 {
+            margin: auto;
+            padding: 1rem;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        header#main-header>div nav {
+            display: flex;
+            justify-content: flex-end;
+            margin: 1rem;
+        }
+
+        header#main-header>div nav ul {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 1rem;
+        }
+
+        header#main-header>div nav div input {
+            display: flex;
+            font-weight: bold;
+            background: #e1e9ee;
+            border: none;
+            border-radius: 2px;
+            font-size: 13px;
+            height: 34px;
+            max-width: 380px;
+            flex: 1;
+            color: rgba(40, 62, 74, 0.75);
+            padding-left: 100px;
+        }
+
+        header#main-header>div>div nav div input:focus {
+            background: #fff;
+        }
+
+        header#main-header>div nav div span#search-icon {
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            font-size: 12px;
+            color: #283e4a;
+        }
+
+        header#main-header>div nav div span#search-button {
+            display: none;
+            position: absolute;
+            right: 0;
+            padding: 9px;
+            background: #e1e9ee;
+            color: #0084bf;
+            border-radius: 2px;
+        }
+
+        header#main-header>div nav ul li {
+            color: #c7d1d8;
+            display: inline-block;
+            height: 52px;
+        }
+
+        header#main-header>div nav ul li div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 90px;
+            font-size: 20px;
+            height: 100%;
+            padding-bottom: 2px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        header#main-header>div nav ul li div:hover {
+            color: #fff;
+        }
+
+        div#container {
+            max-width: 1188px;
+            margin: 3 auto;
+            margin-top: 2rem;
+            padding: 0 30px;
+
+            grid-template-areas:
+                "ads ads ads"
+                "left-aside main-section right-aside";
+            grid-template-rows: 100px 1fr;
+            grid-template-columns: 216px 1fr 312px;
+
+            display: flex;
+        }
+
+        div#container>div{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 2rem;
+        }
+
+        div#container>div>div form {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            border: 0.2rem solid rgb(229, 9, 9);
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
+            border-radius: 2rem;
             background-color: black;
             color: white;
+            margin-left: 4rem;
             font-size: 2rem;
         }
 
+        /*
         table{
             border: 5px solid black;
             border-collapse: collapse;
+            margin-top: 4rem;
         }
 
-        td,th{
-            border:2px solid rgb(21, 21, 21);
-            padding-left: 2rem;
-        }
-
+        
         thead{
             background-color: black;
             color: white;
         }
 
         form{
+            display: flex;
+            flex-direction: column;
             margin: auto;
             margin-top: 2rem;
+            border: 0.5rem solid rgb(229, 9, 9);
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 2rem;
+            border-radius: 2rem;
+            background-color: black;
+            color: white;
+        }
+
+        label{
+            font-size: 2rem;
+        }
+        caption{
+            font-size: 2rem;
         }
 
         input{
+            font-size: 1.5rem;
             font-size: 2rem;
+            margin-top: 2rem;
         }
+
+        caption> #cap{
+            font-size: 2rem;
+            text-align: center;
+            
+        } */
     </style>
 </head>
+
 <body>
-    <h1 id="head">DATABASE</h1>
+    <header id="main-header">
+        <div>
+            <div>
+                <span id="header-picture-menu-bars">
+                    <span class="fab fa-wordpress-simple"></span>
+                </span>
+                <h1 id="head">University of Washington</h1>
+            </div>
 
-    <table>
-        <colgroup>
-            <col>
-            <col style="background-color: yellow">
-          </colgroup>
-        <thead>
-            <tr>
-                <caption>University of Washington</caption>
-                <th>S.No.</th>
-                <th>Name</th>
-                <th colspan="5">Subject
+            <nav>
+
+                <ul>
+
+                    <div>
+                        <input type="text" id="search" placeholder="         search" onfocus="toggleSearchInput()"
+                            onblur="toggleSearchInput()">
+                        <span id="search-icon" class="fas fa-search"></span>
+                        <span id="search-icon" class="fas fa-search"></span>
+                    </div>
+
+                    <span class="fas fa-commit"></span>
+
+                    <li>
+                        <div id="home" class="selected">
+                            <span class="fas fa-home"></span>
+                            <span class="nav-item-text">Home</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span class="fas fa-users"></span>
+                            <span class="nav-item-text">Network</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span class="fas fa-briefcase"></span>
+                            <span class="nav-item-text">Jobs</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span class="fa fa-comments"></span>
+                            <span class="nav-item-text">Message</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span class="fas fa-bell"></span>
+                            <span class="nav-item-text">Notification</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div id="right-border">
+                            <!-- <img src="jail.png" alt="Profile picture"> -->
+                            <span class="fas fa-user-tie"></span>
+                            <span class="nav-item-text">Me <span class="fas fa-caret-down"></span></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span class="fas fa-th"></span>
+                            <span class="nav-item-text">Work <span class="fas fa-caret-down"></span></span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="container">
+        <div>
+            <table id="all-data">
+                <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Math</th>
-                        <th>English</th>
-                        <th>Chemistry</th>
-                        <th>Hindi</th>
-                        <th>Physics</th>
+                        <caption>University of Washington</caption>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th colspan="5">Subject
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Math</th>
+                                <th>English</th>
+                                <th>Chemistry</th>
+                                <th>Hindi</th>
+                                <th>Physics</th>
+                            </tr>
+                        </th>
                     </tr>
-                </th>
-            </tr>
-        </thead>
+                </thead>
 
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Vivek</td>
-                <td>94</td>
-                <td>94</td>
-                <td>94</td>
-                <td>94</td>
-                <td>94</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Amit</td>
-                <td>90</td>
-                <td>90</td>
-                <td>90</td>
-                <td>90</td>
-                <td>90</td>
-            </tr>
-        </tbody>
-    </table>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Vivek</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Amit</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Amit</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Amit</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Amit</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <form action="">
-        <label for="name">Name:
-            <input type="text" id="name">
-        </label>
-        <label for="math">Math:
-            <input type="text" id="math">
-        </label>
-        <label for="eng">English:
-            <input type="text" id="eng">
-        </label>
-        <label for="che">Chemistry:
-            <input type="text" id="che">
-        </label>
-        <label for="hindi">Hindi:
-            <input type="text" id="hindi">
-        </label>
-        <label for="Physics">Physics:
-            <input type="text" id="Physics">
-        </label>
-        <input type="submit" value="submit">
-    </form>
+            <!-- form -->
+            <div>
+                <form action="">
+                    <label for="">
+                        <caption id="cap">University of Washington</caption>
+                    </label>
+    
+                    <label for="name">Name:
+    
+                        <input type="text" id="name">
+                    </label>
+                    <label for="math">Math:
+                        <input type="text" id="math">
+                    </label>
+                    <label for="eng">English:
+                        <input type="text" id="eng">
+                    </label>
+                    <label for="che">Chemistry:
+                        <input type="text" id="che">
+                    </label>
+                    <label for="hindi">Hindi:
+                        <input type="text" id="hindi">
+                    </label>
+                    <label for="Physics">Physics:
+                        <input type="text" id="Physics">
+                    </label>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="data">
+
+        
+    </div>
+
 
     <script>
         let formElem = document.querySelector("form")
-        formElem.addEventListener("submit",(e) =>{
+        formElem.addEventListener("submit", (e) => {
             e.preventDefault();
 
             let name = document.querySelector("#name").value;
@@ -131,7 +414,7 @@
             let che = document.querySelector("#che").value;
             let hindi = document.querySelector("#hindi").value;
             let phy = document.querySelector("#Physics").value;
-            let sno = document.querySelectorAll("tbody tr").length+1;
+            let sno = document.querySelectorAll("tbody tr").length + 1;
             let tr = document.createElement("tr");
             tr.innerHTML = `
                 <td>${sno}</td>
@@ -148,4 +431,5 @@
         })
     </script>
 </body>
+
 </html>
