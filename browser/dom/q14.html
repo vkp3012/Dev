@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #count-clock{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1rem solid red;
+            border-radius: 2rem;
+            width: 50%;
+            padding: 4rem;
+            margin-top: 5rem;
+            margin-left: 25rem;
+            height: 80vh;
+            background-color: black;
+            color: white;
+        }
+        
+        #count-clock>*{
+            margin-left: 0.1rem;
+        }
+
+        .count{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0.5rem solid red;
+            background-color: black;
+            border-radius: 2rem;
+            color: white;
+            height: 15rem;
+            width: 25rem;
+        }
+
+        h1{
+            font-size: 15rem;
+        }
+
+        .count-number{
+            display: flex;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+
+        input{
+            border: 0.1rem solid red;
+            background-color: black;
+            border-radius: 1rem;
+            color: white;
+            height: 2rem;
+            width: 15rem;
+            outline: red;
+        }
+        button{
+            border: 0.1rem solid red;
+            background-color: black;
+            border-radius: 1rem; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="count-clock">
+        <h2>Count Clock</h2>
+        <div class="count">
+            <h1>0</h1>
+        </div>
+
+        <div class="count-number">
+            <input type="number">
+            <button>Begin  Countdown</button>
+        </div>
+
+    </div>
+    
+
+    <script>
+        let h1 = document.querySelector("h1");
+        let input = document.querySelector("input");
+        let button = document.querySelector("button");
+        button.addEventListener("click",(e)=>{
+            let value = input.value;
+            if(!value) return;
+            value--;
+            h1.innerText = value;
+            let id = setInterval(() =>{
+                if(value<0){
+                    clearInterval(id);
+                    return;
+                }
+
+                h1.innerText = value;
+                value--;
+            },1000)
+        })
+    </script>
+</body>
+</html>
