@@ -1,4 +1,4 @@
-// < --------------Question 1----------------->
+// < --------------Question 1-----------------> ❌
     
 // let randomValue = { name: "Lydia" };
 // randomValue = 23;
@@ -104,6 +104,7 @@
 // const person = { name: 'Lydia Hallie' };
 
 // Object.seal(person);
+
 // // A: person.name = "Evan Bacon"
 // // B: person.age = 21
 // // C: delete person.name
@@ -119,7 +120,7 @@
 // // C: ['🥑', ['✨', '✨', '🍕', '🍕']]
 // // D: ['🥑', '✨', '✨', '🍕', '🍕']
 
-// // < --------------Question 10----------------->
+// // < --------------Question 10-----------------> ❌
 
 // const randomValue = 21;
 
@@ -194,7 +195,7 @@
 // // C: Mara null Lydia Hallie null
 // // D: null ReferenceError null ReferenceError
 
-// // < --------------Question 14----------------->
+// // < --------------Question 14-----------------> ❌
 
 // let num = 1;
 // const list = ['🥳', '🤠', '🥰', '🤪'];
@@ -407,7 +408,7 @@
 // // C: Lydia is 21 Lydia is 21
 // // D: Lydia is 21 function
 
-// // < --------------Question 30----------------->
+// // < --------------Question 30----------------->❌
 
 // var num = 8;
 // var num = 10;
