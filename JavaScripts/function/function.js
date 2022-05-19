@@ -23,7 +23,7 @@ function SayHi(){
 //------------------------------------------
 
 //Function Call or function invoke................
-console.log("-------------Function define and Function call------------------");
+console.log("-------------Function invoke and Function call------------------");
 SayHi();
 functionName();
 //------------------------------------------
