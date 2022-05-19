@@ -9,7 +9,7 @@ body{
 
 .toolbox-cont{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background-color: #4b4b4b;
     height: 6rem;
     align-items: center;

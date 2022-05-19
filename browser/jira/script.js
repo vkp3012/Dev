@@ -109,7 +109,7 @@ function createTicket(ticketColor,ticketTask,ticketID){
     ticketcout.setAttribute("class","ticket-cont");
     ticketcout.innerHTML = `
         <div class = "ticket-color ${ticketColor}"></div>  
-        <div class = "ticket-id">#${id}</div>  
+        <div class = "ticket-id">Ticket Id:- #${id}</div>  
         <div class = "task-area">${ticketTask}</div>  
         <div class = "ticket-lock">
             <i class = "fas fa-lock"></i>
