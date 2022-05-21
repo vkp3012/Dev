@@ -55,3 +55,46 @@ video{
     width: 4rem;
     border-radius: 70%;
 }
+
+.scale-record{
+    animation-name: scale-record;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+.scale-capture{
+    animation-name: scale-record;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+
+@keyframes scale-record{
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+@keyframes scale-capture{
+    0%{
+        transform: scale(0.8);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.timer-cont{
+    position: absolute;
+    bottom: 10rem;
+    left:5rem;
+    color: aqua;
+    font-size: 2rem;
+}
+
+.timer{
+    display: none;
+}
+
