@@ -6,6 +6,7 @@ let captureBtn = document.querySelector(".capture-btn");
 
 let recoder;
 let chunks = []; //media data in chunks
+let transparentColor = "transparent";
 
 let constraints={
     video:true,
@@ -65,10 +66,10 @@ function startTimer(){
         let totalSeconds = counter;
 
         let hours = Number.parseInt(totalSeconds/3600);
-        totalSeconds = totalSeconds%3600;
+        totalSeconds = totalSeconds % 3600;
 
         let minutes = Number.parseInt(totalSeconds/60);
-        totalSeconds = totalSeconds%60;
+        totalSeconds = totalSeconds % 60;
 
         let second = totalSeconds;
 
@@ -76,7 +77,7 @@ function startTimer(){
         minutes = (minutes<10)? `0${minutes}`:minutes;
         second = (second<10)? `0${second}`:second;
 
-        timer.innerHTML = `${hours}:${minutes}:${second}`;
+        timer.innerText = `${hours}:${minutes}:${second}`;
         counter++;
     }
 
@@ -86,5 +87,38 @@ function startTimer(){
 function stopTimer(){
     clearInterval(timerID);
     timer.style.display = "none"
-    timer.innerHTML = "00:00:00"
+    timer.innerText = "00:00:00"
 }
+
+//canvas capture
+
+captureBtncont.addEventListener("click",(e)=>{
+    let canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    let tool = canvas.getContext("2d")
+    tool.drawImage(video,0,0,canvas.width,canvas.height)
+
+    //filter
+    tool.fillstyle = transparentColor;
+    tool.fillRect(0,0,canvas.width,canvas.height)
+
+    let imageURL = canvas.toDataURL();
+    let a = document.createElement("a")
+    a.href = imageURL;
+    a.download = "image.jpg"
+    a.click();
+})
+
+
+//filter logic
+let filterLayer = document.querySelector(".filter-layer")
+let allFilter = document.querySelectorAll(".filter");
+allFilter.forEach((filterElem) =>{
+    filterElem.addEventListener("click",(e)=>{
+        //get style
+        transparentColor = getComputedStyle(filterElem).getPropertyValue("background-color");
+        filterLayer.style.backgroundColor = transparentColor;
+    })
+})
