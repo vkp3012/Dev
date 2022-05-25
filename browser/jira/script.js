@@ -147,9 +147,11 @@ function handleRemoval(ticket,id){
 
 //lock and unlock function
 function handlelock(ticket,id){
+    
     let ticketlockElem = ticket.querySelector(".ticket-lock");
     let ticketLock = ticketlockElem.children[0];
     let ticketTaskArea = ticket.querySelector(".task-area")
+
     ticketLock.addEventListener("click", (e) => {
         let ticketIdx = getTicketIdx(id);
         if(ticketLock.classList.contains(lockClass)){
