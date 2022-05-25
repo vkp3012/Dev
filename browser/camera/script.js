@@ -51,6 +51,56 @@ navigator.mediaDevices.getUserMedia(constraints)
     })
 })
 
+//canvas capture
+
+captureBtncont.addEventListener("click",(e)=>{
+    captureBtn.classList.add("scale-capture");
+    let canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    let tool = canvas.getContext("2d")
+    tool.drawImage(video,0,0,canvas.width,canvas.height)
+
+    //filter
+    tool.fillstyle = transparentColor;
+    tool.fillRect(0,0,canvas.width,canvas.height)
+
+    let imageURL = canvas.toDataURL();
+
+    if(db){
+        let imageId = shortid();
+        let dbTransaction = db.transaction("image","readwrite");
+        let imageStore = dbTransaction.objectStore("image");
+        let imageEntry = {
+            id:`img-${imageId}`,
+            url:imageURL
+        }
+        imageStore.add(imageEntry)
+    }
+
+    setTimeout(()=>{
+        captureBtn.classList.add("scale-capture");
+    },500)
+    // let a = document.createElement("a")
+    // a.href = imageURL;
+    // a.download = "image.jpg"
+    // a.click();
+})
+
+
+//filter logic
+let filterLayer = document.querySelector(".filter-layer")
+let allFilter = document.querySelectorAll(".filter");
+allFilter.forEach((filterElem) =>{
+    filterElem.addEventListener("click",(e)=>{
+        //get style
+        transparentColor = getComputedStyle(filterElem).getPropertyValue("background-color");
+        filterLayer.style.backgroundColor = transparentColor;
+    })
+})
+
+
 recordBtncont.addEventListener("click",(e)=>{
     if(!recoder) return;
 
@@ -100,52 +150,3 @@ function stopTimer(){
     timer.style.display = "none"
     timer.innerText = "00:00:00"
 }
-
-//canvas capture
-
-captureBtncont.addEventListener("click",(e)=>{
-    captureBtn.classList.add("scale-capture");
-    let canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    let tool = canvas.getContext("2d")
-    tool.drawImage(video,0,0,canvas.width,canvas.height)
-
-    //filter
-    tool.fillstyle = transparentColor;
-    tool.fillRect(0,0,canvas.width,canvas.height)
-
-    let imageURL = canvas.toDataURL();
-
-    if(db){
-        let imageId = shortid();
-        let dbTransaction = db.transaction("image","readwrite");
-        let imageStore = dbTransaction.objectStore("image");
-        let imageEntry = {
-            id:`img-${imageId}`,
-            url:imageURL
-        }
-        imageStore.add(imageEntry)
-    }
-
-    setTimeout(()=>{
-        captureBtn.classList.add("scale-capture");
-    },500)
-    // let a = document.createElement("a")
-    // a.href = imageURL;
-    // a.download = "image.jpg"
-    // a.click();
-})
-
-
-//filter logic
-let filterLayer = document.querySelector(".filter-layer")
-let allFilter = document.querySelectorAll(".filter");
-allFilter.forEach((filterElem) =>{
-    filterElem.addEventListener("click",(e)=>{
-        //get style
-        transparentColor = getComputedStyle(filterElem).getPropertyValue("background-color");
-        filterLayer.style.backgroundColor = transparentColor;
-    })
-})
